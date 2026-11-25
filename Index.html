@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Anual - Colegio Montano</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Importar fuente Inter */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+        }
+        /* Colores institucionales Colegio Montano */
+        .bg-montano-primary { background-color: #1F3C88; }
+        .bg-montano-secondary { background-color: #3F72AF; }
+        .bg-montano-accent { background-color: #F2C94C; }
+        .text-montano-primary { color: #1F3C88; }
+        .text-montano-secondary { color: #3F72AF; }
+        .text-montano-accent { color: #B38F27; }
+        .border-montano-primary { border-color: #1F3C88; }
+        .border-montano-secondary { border-color: #3F72AF; }
+        .active-tab {
+            background-color: #F2C94C !important;
+            color: #1F3C88 !important;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- BARRA SUPERIOR INSTITUCIONAL -->
+    <header class="bg-montano-primary text-white shadow-md p-4 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-4">
+            <!-- Logo Institucional -->
+            <img src="https://admisiones.colegiomontano.edu.gt/assets/img/logo-cm-blanco.webp" alt="Logo Colegio Montano" style="max-height: 50px;" onerror="this.src='https://placehold.co/150x50/1F3C88/FFFFFF?Text=Colegio+Montano'">
+            <div>
+                <h1 class="text-lg font-bold"><i>Colegio Montano - Plan Anual Interactivo</i></h1>
+                <p class="text-xs text-slate-200"><i>Ciclo Escolar: 2027</i></p>
+            </div>
+        </div>
+
+        <!-- Datos del Docente e Identificadores -->
+        <div class="text-xs md:text-sm text-center md:text-right bg-montano-secondary bg-opacity-40 p-2 rounded-lg border border-slate-500">
+            <p><i>Curso: Emprendimiento para la productividad III</i></p>
+            <p><i>Grado: Tercero Básico | Docente: Mélida García</i></p>
+        </div>
+
+        <!-- Botón Pantalla Completa -->
+        <button onclick="toggleFullScreen()" class="bg-montano-accent text-montano-primary px-4 py-2 rounded-lg font-bold text-sm shadow hover:opacity-90 transition flex items-center gap-2">
+            <span>🖥️</span> <i>Pantalla Completa</i>
+        </button>
+    </header>
+
+    <!-- NAVEGACIÓN HORIZONTAL POR PESTAÑAS -->
+    <nav class="bg-montano-secondary p-2 shadow-inner overflow-x-auto">
+        <div class="flex gap-2 min-w-max justify-start md:justify-center">
+            <button onclick="switchTab('tab-1')" id="btn-1" class="tab-btn px-4 py-2 rounded-lg text-white font-medium text-sm transition hover:bg-sky-700 active-tab"><i>I) Descriptor</i></button>
+            <button onclick="switchTab('tab-2')" id="btn-2" class="tab-btn px-4 py-2 rounded-lg text-white font-medium text-sm transition hover:bg-sky-700"><i>II) Objetivos</i></button>
+            <button onclick="switchTab('tab-3')" id="btn-3" class="tab-btn px-4 py-2 rounded-lg text-white font-medium text-sm transition hover:bg-sky-700"><i>III) Competencias</i></button>
+            <button onclick="switchTab('tab-4')" id="btn-4" class="tab-btn px-4 py-2 rounded-lg text-white font-medium text-sm transition hover:bg-sky-700"><i>IV) Indicadores</i></button>
+            <button onclick="switchTab('tab-5')" id="btn-5" class="tab-btn px-4 py-2 rounded-lg text-white font-medium text-sm transition hover:bg-sky-700"><i>V) Métodos Didácticos</i></button>
+            <button onclick="switchTab('tab-6')" id="btn-6" class="tab-btn px-4 py-2 rounded-lg text-white font-medium text-sm transition hover:bg-sky-700"><i>VI) Bibliografía</i></button>
+            <button onclick="switchTab('tab-7')" id="btn-7" class="tab-btn px-4 py-2 rounded-lg text-white font-medium text-sm transition hover:bg-sky-700"><i>VII) Contenidos</i></button>
+        </div>
+    </nav>
+
+    <!-- CONTENEDOR PRINCIPAL DE LA PIZARRA DIGITAL -->
+    <main class="flex-grow p-4 md:p-8 max-w-7xl mx-auto w-full">
+        
+        <!-- I) DESCRIPTOR DEL CURSO -->
+        <section id="tab-1" class="tab-content bg-white p-6 rounded-xl shadow-md border-t-4 border-montano-primary space-y-4">
+            <h2 class="text-2xl font-bold text-montano-primary border-b pb-2"><i>I) Descriptor del Curso</i></h2>
+            <p class="text-slate-700 leading-relaxed">
+                <i>El curso de Emprendimiento para la Productividad III en Tercero Básico promueve el desarrollo de una mentalidad empresarial y productiva en los estudiantes, orientándolos hacia la identificación de oportunidades de mercado, el diseño de modelos de negocio viables y la gestión eficiente de recursos. Se fomenta el razonamiento financiero, la creatividad comercial y los valores de responsabilidad social y ética en el entorno económico actual.</i>
+            </p>
+            <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-montano-secondary">
+                <p class="text-sm text-slate-600"><i>Finalidad del área: Consolidar habilidades de gestión, liderazgo y optimización de procesos productivos locales y globales.</i></p>
+            </div>
+        </section>
+
+        <!-- II) OBJETIVOS GENERALES -->
+        <section id="tab-2" class="tab-content bg-white p-6 rounded-xl shadow-md border-t-4 border-montano-primary space-y-4 hidden">
+            <h2 class="text-2xl font-bold text-montano-primary border-b pb-2"><i>II) Objetivos Generales</i></h2>
+            <ul class="list-disc pl-5 space-y-3 text-slate-700">
+                <li><i>Fomentar la comprensión profunda de la realidad socioeconómica mediante la investigación de necesidades insatisfechas en la comunidad.</i></li>
+                <li><i>Estimular el pensamiento crítico en la formulación de proyectos de emprendimiento que respondan a criterios de sostenibilidad y viabilidad técnica.</i></li>
+                <li><i>Impulsar el uso de herramientas tecnológicas y administrativas para la gestión y proyección de pequeñas y medianas iniciativas productivas.</i></li>
+                <li><i>Fortalecer la capacidad de resolución de problemas financieros y de comercialización con un enfoque ético y colaborativo.</i></li>
+            </ul>
+        </section>
+
+        <!-- III) COMPETENCIAS -->
+        <section id="tab-3" class="tab-content bg-white p-6 rounded-xl shadow-md border-t-4 border-montano-primary space-y-4 hidden">
+            <h2 class="text-2xl font-bold text-montano-primary border-b pb-2"><i>III) Competencias Académicas e Institucionales (CM)</i></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                    <h3 class="font-bold text-montano-secondary mb-2"><i>Competencias Específicas del Área</i></h3>
+                    <ul class="list-disc pl-5 text-sm space-y-2 text-slate-700">
+                        <li><i>Ejecuta proyectos emprendedores para contribuir al desarrollo local comunitario.</i></li>
+                        <li><i>Determina el uso de la tecnología adecuada en la ejecución de proyectos emprendedores.</i></li>
+                        <li><i>Administra con sostenibilidad proyectos de emprendimiento personales y locales.</i></li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                    <h3 class="font-bold text-montano-secondary mb-2"><i>Competencias Fijas Institucionales CM</i></h3>
+                    <ul class="list-disc pl-5 text-sm space-y-2 text-slate-700">
+                        <li><i>Pensamiento crítico y resolución de problemas.</i></li>
+                        <li><i>Colaboración y trabajo en equipo.</i></li>
+                        <li><i>Competencias digitales.</i></li>
+                        <li><i>Comunicación efectiva.</i></li>
+                        <li><i>Creatividad e innovación.</i></li>
+                        <li><i>Aprendizaje autónomo y adaptabilidad.</i></li>
+                        <li><i>Conciencia global y cultural.</i></li>
+                        <li><i>Ética y ciudadanía digital.</i></li>
+                        <li><i>Gestión emocional y resiliencia.</i></li>
+                        <li><i>Conciencia ecológica y sostenibilidad.</i></li>
+                        <li><i>Desempeño de roles de liderazgo.</i></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- IV) INDICADORES DE LOGRO -->
+        <section id="tab-4" class="tab-content bg-white p-6 rounded-xl shadow-md border-t-4 border-montano-primary space-y-4 hidden">
+            <h2 class="text-2xl font-bold text-montano-primary border-b pb-2"><i>IV) Indicadores de Logro</i></h2>
+            <div class="space-y-3">
+                <div class="p-3 bg-blue-50 rounded-lg border border-blue-200">
+                    <p class="text-slate-800"><i>1. Utiliza herramientas para diseñar proyectos emprendedores.</i></p>
+                </div>
+                <div class="p-3 bg-blue-50 rounded-lg border border-blue-200">
+                    <p class="text-slate-800"><i>2. Practica los procesos de la gestión de la calidad y mejora continua de los procesos productivos.</i></p>
+                </div>
+                <div class="p-3 bg-blue-50 rounded-lg border border-blue-200">
+                    <p class="text-slate-800"><i>3. Identifica las diferentes tecnologías de la información y comunicación para contribuir a la mejora continua del proyecto emprendedor.</i></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- V) MÉTODOS DIDÁCTICOS (CONTENIDO FIJO INSTITUCIONAL) -->
+        <section id="tab-5" class="tab-content bg-white p-6 rounded-xl shadow-md border-t-4 border-montano-primary space-y-4 hidden">
+            <h2 class="text-2xl font-bold text-montano-primary border-b pb-2"><i>V) Métodos Didácticos (Modelo Activo-Colaborativo y Período Doble - 70 minutos)</i></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-amber-50 p-4 rounded-lg border border-amber-200">
+                    <h3 class="font-bold text-montano-accent mb-1"><i>1. Introducción Motivante (15 min)</i></h3>
+                    <p class="text-sm text-slate-700"><i>Activación de presaberes mediante dinámicas breves, juegos de rol comerciales, retos rápidos o lluvia de ideas guiada.</i></p>
+                </div>
+                <div class="bg-amber-50 p-4 rounded-lg border border-amber-200">
+                    <h3 class="font-bold text-montano-accent mb-1"><i>2. Trabajo Individual (20 min)</i></h3>
+                    <p class="text-sm text-slate-700"><i>Desarrollo de potencialidades, habilidades y destrezas individuales, redacción de reportes o cálculos analíticos personales.</i></p>
+                </div>
+                <div class="bg-amber-50 p-4 rounded-lg border border-amber-200">
+                    <h3 class="font-bold text-montano-accent mb-1"><i>3. Trabajo en Equipo (20 min)</i></h3>
+                    <p class="text-sm text-slate-700"><i>Interacción activa con roles definidos (líder, financiero, comunicador) bajo la consigna institucional todos para uno y uno para todos.</i></p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                    <h3 class="font-bold text-montano-secondary mb-1"><i>4. Plenaria (15 min)</i></h3>
+                    <p class="text-sm text-slate-700"><i>Exposición pública de avances, defensa de ideas, diálogo socrático y validación de la lectura previa realizada en casa.</i></p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                    <h3 class="font-bold text-montano-secondary mb-1"><i>Metodologías Clave del Área</i></h3>
+                    <p class="text-sm text-slate-700"><i>Aplicación transversal del Aprendizaje Basado en Proyectos (ABP) y el Constructivismo Pedagógico.</i></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VI) BIBLIOGRAFÍA -->
+        <section id="tab-6" class="tab-content bg-white p-6 rounded-xl shadow-md border-t-4 border-montano-primary space-y-4 hidden">
+            <h2 class="text-2xl font-bold text-montano-primary border-b pb-2"><i>VI) Bibliografía y Fuentes de Referencia</i></h2>
+            <ul class="list-disc pl-5 space-y-2 text-slate-700">
+                <li><i>Chiavenato, I. (2020). Emprendimiento: Conquistando Nuevos Mercados. Editorial McGraw-Hill.</i></li>
+                <li><i>Ministerio de Educación de Guatemala (MINEDUC). Currículum Nacional Base (CNB) - Tercero Básico, Área de Productividad y Desarrollo.</i></li>
+                <li><i>Osterwalder, A. (2019). Generación de Modelos de Negocio. Editorial Deusto.</i></li>
+                <li><i>Guías y Recursos Didácticos Institucionales - Colegio Montano (Edición 2027).</i></li>
+            </ul>
+        </section>
+
+        <!-- VII) CONTENIDOS (UNIDAD ÚNICA) -->
+        <section id="tab-7" class="tab-content bg-white p-6 rounded-xl shadow-md border-t-4 border-montano-primary space-y-4 hidden">
+            <h2 class="text-2xl font-bold text-montano-primary border-b pb-2"><i>VII) Secuencia de Contenidos (Unidad Única)</i></h2>
+            
+            <div class="bg-slate-50 p-6 rounded-lg border border-slate-200 space-y-4">
+                <h3 class="font-bold text-montano-primary text-xl border-b pb-2"><i>Unidad Única: Ecosistema Emprendedor, Desarrollo Local y Campos Productivos</i></h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-4 rounded-lg border border-slate-200 space-y-2">
+                        <h4 class="font-bold text-montano-secondary"><i>Temas Principales (1 a 4)</i></h4>
+                        <ul class="list-disc pl-5 text-sm text-slate-700 space-y-2">
+                            <li><i>El ecosistema emprendedor.</i></li>
+                            <li><i>Política de emprendimiento. Ley de emprendimiento en Guatemala.</i></li>
+                            <li><i>Emprendimiento social.</i></li>
+                            <li><i>El cooperativismo y desarrollo local.</i></li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg border border-slate-200 space-y-2">
+                        <h4 class="font-bold text-montano-secondary"><i>Campos Productivos y Aplicaciones (5 a 7)</i></h4>
+                        <ul class="list-disc pl-5 text-sm text-slate-700 space-y-2">
+                            <li><i>Campos productivos en Guatemala: maderas, metales, dibujo técnico, fotografía, artes gráficas, electricidad, artesanías, tejido, bordado, confección y otros.</i></li>
+                            <li><i>Tecnología en el arte Culinario.</i></li>
+                            <li><i>Proyecto artesanal: envasados caseros.</i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="bg-montano-primary text-white text-center py-4 text-xs mt-auto border-t border-sky-900">
+        <p><i>Colegio Montano - Excelencia Académica y Formación Integral | Ciclo Escolar 2027</i></p>
+    </footer>
+
+    <!-- SCRIPT DE INTERACTIVIDAD Y PANTALLA COMPLETA -->
+    <script>
+        function switchTab(tabId) {
+            // Ocultar todas las pestañas
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(el => el.classList.add('hidden'));
+
+            // Remover clase activa de todos los botones
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(el => el.classList.remove('active-tab'));
+
+            // Mostrar la pestaña seleccionada y activar su botón
+            document.getElementById(tabId).classList.remove('hidden');
+            const targetBtn = document.getElementById(tabId.replace('tab-', 'btn-'));
+            if(targetBtn) {
+                targetBtn.classList.add('active-tab');
+            }
+        }
+
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.error("Error al intentar activar pantalla completa: ", err);
+                });
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+    </script>
+</body>
+</html>
